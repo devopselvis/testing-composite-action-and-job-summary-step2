@@ -1,0 +1,20 @@
+name: Testing
+
+on:
+  workflow_dispatch:
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: First Step
+        run: echo "Ran the first step" >> $GITHUB_STEP_SUMMARY
+        
+      - name: My Composite Action
+        uses: devopselvis/testing-composite-action-and-job-summary-step@main
+
+      - name: Second Step
+        run: |
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Ran the second step" >> $GITHUB_STEP_SUMMARY
